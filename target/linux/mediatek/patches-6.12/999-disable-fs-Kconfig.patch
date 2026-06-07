@@ -1,0 +1,20 @@
+--- a/fs/Kconfig.binfmt
++++ b/fs/Kconfig.binfmt
+@@ -169,7 +169,7 @@
+ 	  don't know what to answer at this point, say Y.
+ 
+ config COREDUMP
+-	bool "Enable core dump support" if EXPERT
++	bool "Enable core dump support"
+ 	default y
+ 	help
+ 	  This option enables support for performing core dumps. You almost
+@@ -177,7 +177,7 @@
+ 	  need debugging or only ever run flawless code.
+ 
+ config EXEC_KUNIT_TEST
+-	bool "Build execve tests" if !KUNIT_ALL_TESTS
++	bool "Build execve tests"
+ 	depends on KUNIT=y
+ 	default KUNIT_ALL_TESTS
+ 	help

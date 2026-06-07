@@ -1,0 +1,16 @@
+--- a/net/Kconfig	2026-05-11 08:25:27.217314486 +0800
++++ b/net/Kconfig	2026-05-11 08:35:53.000000000 +0800
+@@ -70,7 +70,12 @@
+ 	bool
+ 
+ config SKB_EXTENSIONS
+-	bool
++	bool "Enable SKB Extensions (Forced for High Performance)"
++	default y
++	help
++	  This enables the SKB Extensions for high-performance networking
++	  and advanced features like MPTCP, Flow Offloading, and AppFilter.
++	  Strongly recommended for MT7986 with 1GB RAM.
+ 
+ config NET_DEVMEM
+ 	def_bool y

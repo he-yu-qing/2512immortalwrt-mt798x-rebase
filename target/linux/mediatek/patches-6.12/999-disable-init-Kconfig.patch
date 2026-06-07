@@ -1,0 +1,15 @@
+--- a/init/Kconfig
++++ b/init/Kconfig
+@@ -1822,9 +1822,9 @@
+ 
+ 	  If unsure, say N.
+ 
+-config CACHESTAT_SYSCALL
+-	bool "Enable cachestat() system call" if EXPERT
+-	default y
++config KALLSYMS
++	bool "Load all symbols for debugging/ksymoops"
++	default n
+ 	help
+ 	  Enable the cachestat system call, which queries the page cache
+ 	  statistics of a file (number of cached pages, dirty pages,
