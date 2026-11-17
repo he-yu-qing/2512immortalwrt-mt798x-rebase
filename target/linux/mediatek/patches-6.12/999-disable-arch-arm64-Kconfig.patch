@@ -1,0 +1,26 @@
+--- linux-6.12.87/arch/arm64/Kconfig	2026-05-08 14:39:25.000000000 +0800
++++ build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/linux-6.12.87/arch/arm64/Kconfig	2026-05-29 19:19:18.000000000 +0800
+@@ -133,7 +133,7 @@
+ 	select DMA_BOUNCE_UNALIGNED_KMALLOC
+ 	select DMA_DIRECT_REMAP
+ 	select EDAC_SUPPORT
+-	select FRAME_POINTER
++	# select FRAME_POINTER
+ 	select FUNCTION_ALIGNMENT_4B
+ 	select FUNCTION_ALIGNMENT_8B if DYNAMIC_FTRACE_WITH_CALL_OPS
+ 	select GENERIC_ALLOCATOR
+@@ -2383,6 +2383,14 @@
+ 
+ endchoice
+ 
++config CMDLINE_OVERRIDE
++	bool "Use alternative cmdline from device tree"
++	help
++	  Some bootloaders may have uneditable bootargs. While CMDLINE_FORCE can
++	  be used, this is not a good option for kernels that are shared across
++	  devices. This setting enables using "chosen/cmdline-override" as the
++	  cmdline if it exists in the device tree.
++
+ config EFI_STUB
+ 	bool
+ 
